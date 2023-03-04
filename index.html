@@ -6,9 +6,10 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 </head>
 <body>
-<div class="container">
   <header class="header">
     <div class="header__logo">
       <a href="/">
@@ -50,60 +51,97 @@
   </header>
 
   <div class="info">
-    <div class="info__text-block">
-      <div class="text-block__text">
-        <h2>
-          Corporate cards and spend management teams actually love.
-        </h2>
-      </div>
-      <div class="text-block__buttons">
-        <div class="textblock-buttons__item">
-          <a href="#">
-            <div class="action-button">
-              Contact sales
-            </div>
-          </a>
+    <div class="info__about">
+      <div class="info__text-block">
+        <div class="text-block__text">
+          <h2>
+            Corporate cards and spend management teams actually love.
+          </h2>
         </div>
-        <div class="textblock-buttons__item">
-          <a href="#">
-            <div class="open-button">
-              Open account
-            </div>
-          </a>
+        <div class="text-block__buttons">
+          <div class="textblock-buttons__item">
+            <a href="#">
+              <div class="action-button">
+                Contact sales
+              </div>
+            </a>
+          </div>
+          <div class="textblock-buttons__item">
+            <a href="#">
+              <div class="open-button">
+                Open account
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="info__about-block">
+        <div class="about-block__item">
+          <div class="about-item__title">
+            <h3>Brex for enterprise</h3>
+          </div>
+          <div class="about-item__description">
+            <p>
+              Easy-to-use corporate cards and spend management software in an integrated global solution.
+            </p>
+            <a href="#">
+              Learn more ->
+            </a>
+          </div>
+        </div>
+        <div class="about-block__item">
+          <div class="about-item__title">
+            <h3>Brex for startups</h3>
+          </div>
+          <div class="about-item__description">
+            <p>
+              Fast access to global cards, business account (send ACH and wires), spend management, and bill pay.
+            </p>
+            <a href="#">
+              Learn more ->
+            </a>
+          </div>
         </div>
       </div>
     </div>
-    <div class="info__about-block">
-      <div class="about-block__item">
-        <div class="about-item__title">
-          <h3>Brex for enterprise</h3>
-        </div>
-        <div class="about-item__description">
-          <p>
-            Easy-to-use corporate cards and spend management software in an integrated global solution.
-          </p>
-          <a href="#">
-            Learn more ->
-          </a>
-        </div>
-      </div>
-      <div class="about-block__item">
-        <div class="about-item__title">
-          <h3>Brex for startups</h3>
-        </div>
-        <div class="about-item__description">
-          <p>
-            Fast access to global cards, business account (send ACH and wires), spend management, and bill pay.
-          </p>
-          <a href="#">
-            Learn more ->
-          </a>
-        </div>
-      </div>
+    <div class="info__image">
+      <span></span>
     </div>
-
-    <div class="info__image"></div>
   </div>
-</div>
+
+  <div class="clients-slider swiper-container">
+    <div class="clients-slider__wrapper swiper-wrapper">
+      <div class="clients-slider__slide swiper-slide">
+        <img src="img/clients/doordash.png" alt="DOORDASH">
+      </div>
+      <div class="clients-slider__slide swiper-slide">
+        <img src="img/clients/scale.png" alt="scale">
+      </div>
+      <div class="clients-slider__slide swiper-slide">
+        <img src="img/clients/airtable.png" alt="airtable">
+      </div>
+      <div class="clients-slider__slide swiper-slide">
+        <img src="img/clients/whatnot.png" alt="whatnot">
+      </div>
+      <div class="clients-slider__slide swiper-slide">
+        <img src="img/clients/classpass.png" alt="classpass">
+      </div>
+      <div class="clients-slider__slide swiper-slide">
+        <img src="img/clients/deel.png" alt="deel.">
+      </div>
+      <div class="clients-slider__slide swiper-slide">
+        <img src="img/clients/airbnb.png" alt="airbnb">
+      </div>
+      <div class="clients-slider__slide swiper-slide">
+        <img src="img/clients/vk.jpeg" alt="ВКонтакте">
+      </div>
+    </div>
+  </div>
+  <div class="for-you">
+    <div class="for-you__header">Solutions that work for you.</div>
+    <div class="for-you__description">Brex meets you where you are — and takes you where you want to go.</div>
+  </div>
+
+  <script src="js/main.js"></script>
 </body>
 </html>

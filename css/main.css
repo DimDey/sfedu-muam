@@ -7,15 +7,14 @@ html {
   font-family: 'Roboto', sans-serif;
 }
 
+body {
+  margin: 0px;
+}
+
 a {
   text-decoration: none;
   color: inherit;
 }
-
-.container {
-  padding: 10px 20px;
-}
-
 
 /* Header */
 
@@ -25,6 +24,7 @@ a {
   flex-wrap: wrap;
   gap: 2em;
   margin-bottom: 12px;
+  padding: 10px 20px;
 }
 
 .header__logo, .header__logo img {
@@ -65,20 +65,17 @@ a {
 
 .info {
   display: flex;
-  width: 42vw;
-  padding-left: 1.5vw;
+  padding-left: 2.5vw;
   justify-content: space-between;
-  flex-direction: column;
-  gap: 10px;
+  flex-direction: row;
+  gap: 2vw;
+  height: calc(100vh - 72px);
 }
 
 .info__image {
-  position: absolute;
-  right: 0;
   background: url('../img/main-info.png');
   background-size: cover;
   width: 49vw;
-  height: calc(100% - 74px);
 }
 
 .text-block__text h2 {
@@ -146,4 +143,42 @@ a:hover .open-button {
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
+}
+
+
+.clients-slider {
+  padding: 80px;
+  overflow: hidden;
+}
+
+.swiper-slide .clients-slider__slide {
+  width: auto;
+}
+
+.clients-slider__slide {
+  height: 30px!important;
+  text-align: center;
+  justify-content: center;
+  display: flex!important;
+
+}
+
+.clients-slider__slide img {
+  max-height: 100%;
+}
+
+
+.for-you {
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+.for-you__header {
+  font-size: 3vw;
+}
+
+.for-you__description {
+  font-size: 2vw;
+  font-weight: 100;
 }
