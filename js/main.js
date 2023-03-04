@@ -1,7 +1,7 @@
 function initializeSlider() {
   let slider = new Swiper('.clients-slider', {
     slidesPerView: 5,
-    spaceBetween: 30,
+    spaceBetween: 50,
     watchOverflow: true,
 
     autoplay: {

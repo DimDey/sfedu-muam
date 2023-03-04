@@ -145,28 +145,32 @@ a:hover .open-button {
   line-height: 24px;
 }
 
-
 .clients-slider {
   padding: 80px;
   overflow: hidden;
+  margin: 20px auto;
+  align-items: center;
 }
 
-.swiper-slide .clients-slider__slide {
+.swiper-container {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.clients-slider__wrapper {
+  align-items: center;
+}
+
+.swiper-slide .client-slider__slide-container {
   width: auto;
 }
 
-.clients-slider__slide {
-  height: 30px!important;
-  text-align: center;
-  justify-content: center;
-  display: flex!important;
-
-}
-
-.clients-slider__slide img {
+.client-slider__slide-container img {
+  max-width: 100%;
   max-height: 100%;
 }
-
 
 .for-you {
   text-align: center;
