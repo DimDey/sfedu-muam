@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto');
 
+* {
+  box-sizing: border-box;
+}
+
 html {
   color: #212121;
   font-size: 16px;
@@ -42,7 +46,70 @@ a {
 }
 
 .header-nav__item {
-  gap: 1em;
+  display: flex;
+  align-items: center;
+  padding-bottom: 20px;
+  margin-bottom: -20px;
+}
+
+.item__arrow{
+  margin-left: 3px;
+}
+
+.header-nav__item:hover > .item__arrow{
+  display: block;
+  transform: rotate(180deg);
+  cursor: pointer;
+}
+
+.header-nav__item .item__list{
+  position: absolute;
+  top: 50px;
+  left: 0;
+  border: 1px solid #ccc;
+  width: 100vw;
+  display: none;
+}
+
+.header-nav__item:hover .item__list{
+  display: block;
+}
+
+.item__list:hover{
+  display: block;
+}
+
+.item__list{
+  padding: 50px 15px;
+  background: white;
+}
+
+.header-nav__item:hover {
+  color: #9b3913;
+}
+
+.header-nav__item:hover .item__list{
+  color: black;
+}
+
+
+.list__content{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  padding: 0px 16px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.list__col{
+  display: block;
+  flex: 0 1 23%;
+}
+
+.list__col li {
+  list-style: none;
 }
 
 .header__buttons {
@@ -94,7 +161,6 @@ a {
   font-weight: 400;
   font-size: 40px;
   padding-top: 3vh;
-  width: 35vw;
 }
 
 .text-block__buttons {
@@ -109,7 +175,7 @@ a {
   height: 100%;
 }
 
-  .action-button   {
+.action-button   {
   background: #F46A35;
   border-radius: 10px;
   padding: 1vw 3vw;
@@ -124,6 +190,10 @@ a {
   padding: 1vw 3vw;
 }
 
+
+.info__about {
+  width: 40vw;
+}
 
 .info__about-block {
   padding-top: 10px;
@@ -150,11 +220,11 @@ a.active-link {
 }
 
 .for-you__header {
-  font-size: 3vw;
+  font-size: 40px;
 }
 
 .for-you__description {
-  font-size: 2vw;
+  font-size: 24px;
   font-weight: 100;
 }
 
@@ -164,13 +234,13 @@ a.active-link {
   justify-content: space-evenly;
   align-items: center;
   gap: 8px;
-  padding: 64px;
+  padding: 64px 20px 64px 20px;
   flex-wrap: wrap;
 }
 
 .for-you__details-item {
   width: 100%;
-  height: 100%;
+  height: 65vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -201,6 +271,7 @@ a.active-link {
 
 .for-you__details-image img {
   height: 100%;
+  max-width: 100%;
 }
 
 .for-you__details-item.startups {
@@ -216,10 +287,14 @@ a.active-link {
   color: #BCBDBD;
 }
 
+.footer a:hover {
+  color: #73737b;
+}
+
 .footer__map {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   gap: 10vw;
   padding: 120px 0;
 }
@@ -234,7 +309,7 @@ a.active-link {
 
 .footer__map-column-header {
   color: white;
-  font-size: 1vw;
+  font-size: 18px;
 }
 
 .footer__links {
@@ -244,37 +319,28 @@ a.active-link {
 .footer__links {
   display: flex;
   padding-bottom: 80px;
+  flex-wrap: wrap;
 }
 
 .footer__links-social {
   flex: 0.4;
   display: flex;
   gap: 30px;
-  font-size: 1vw;
+  font-size: 16px;
+  margin-bottom: 30px;
 }
 
 .footer__license {
-  font-size: 1dvh;
+  font-size: 16px;
 }
 
 .footer__link-downloads {
   display: flex;
   gap: 30px;
+  flex-wrap: wrap;
+  align-items: flex-start;
 }
 
-
-@media screen and (max-width: 1200px) {
-  .info__image {
-    display: none;
-  }
-  .text-block__text h2 {
-    font-size: 32px;
-  }
-
-  .header__buttons {
-    display: none;
-  }
-}
 
 a:hover .open-button {
   background: #f7f7fa;
@@ -338,13 +404,15 @@ a:hover .open-button {
   padding: 20px 0 20px 0;
 }
 
-.limits__text-button-item a {
+.limits__text-button-item button {
+  background: transparent;
   border: 1px solid #212121;
   border-radius: 10px;
   padding: 15px 30px 15px 30px;
+  transition: 1s;
 }
 
-.limits__text-button-item a:hover {
+.limits__text-button-item button:hover {
   background-color: #212121;
   color: white;
 }
@@ -414,7 +482,7 @@ a:hover .open-button {
 }
 
 .usecase__header {
-  font-size: 2vw;
+  font-size: 32px;
 }
 
 .usecase__main {
@@ -426,7 +494,7 @@ a:hover .open-button {
 
 .usecase__main-item {
   font-weight: 400;
-  font-size: 1.2vw;
+  font-size: 16px;
 }
 
 .usecase__image {
@@ -454,8 +522,7 @@ a:hover .open-button {
   display: flex;
   justify-content: space-around;
   background-color: #e7e7e7;
-  padding-left: 5vh;
-  padding-right: 5vh;
+  padding: 5vh;
 }
 
 .calltoaction__content {
@@ -463,12 +530,8 @@ a:hover .open-button {
 }
 
 .calltoaction__content h4 {
-  font-size: 3vw;
+  font-size: 22px;
   margin-bottom: 0.5em
-}
-
-.calltoaction__content p {
-  font-size: 1.5vw;
 }
 
 .calltoaction__buttons {
@@ -487,5 +550,65 @@ a:hover .open-button {
 }
 
 .calltoaction__image img {
-  width: 40vw;
+  width: 100%;
+}
+
+
+@media screen and (max-width: 1200px) {
+  .text-block__text h2 {
+    font-size: 32px;
+  }
+
+  .header__buttons {
+    display: none;
+  }
+}
+@media screen and (max-width: 750px) {
+  .info__image {
+    display: none;
+  }
+
+  .info__about {
+    width: 100%;
+  }
+
+  .header__nav {
+    display: none;
+  }
+}
+
+
+@media screen and (max-width: 1350px) {
+  .for-you__details-container {
+    padding: 0;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .limits__active-container {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .calltoaction__image {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .usecase__main {
+    flex-wrap: wrap;
+    text-align: center;
+    padding: 40px 16px;
+  }
+
+  .usecase__image {
+    width: auto;
+    max-width: 100%;
+    max-height: 200px;
+    margin: 0 auto;
+    display: block;
+  }
 }
