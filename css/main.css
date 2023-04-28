@@ -22,6 +22,102 @@ a {
 
 /* Header */
 
+.hamburger-menu {
+  display: none;
+}
+
+#hamburger__toggle {
+  opacity: 0;
+}
+
+.hamburger__btn {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 15px;
+  right: 40px;
+
+  width: 26px;
+  height: 26px;
+  z-index: 1;
+}
+
+.hamburger__btn > span,
+.hamburger__btn > span::before,
+.hamburger__btn > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  transition: all .2s linear;
+
+  background-color: #73737b;
+}
+
+.hamburger__btn > span::before {
+  content: '';
+  top: -8px;
+}
+
+.hamburger__btn > span::after {
+  content: '';
+  top: -8px;
+}
+
+
+/* контейнер меню */
+.hamburger__box {
+  display: block;
+  position: fixed;
+  visibility: hidden;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 80px 0;
+  list-style: none;
+  text-align: center;
+  background-color: rgba(255,255,255,0.4);
+  backdrop-filter: blur(5px);
+}
+/* элементы меню */
+.hamburger__item {
+  display: block;
+  padding: 12px 24px;
+  color: #333;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.hamburger__navigation {
+  display: none;
+  border-top: 1px solid #cccccc;
+}
+
+.hamburger__item:hover {
+  background-color: #CFD8DC;
+}
+
+#hamburger__toggle:checked ~ .hamburger__btn > span {
+  transform: rotate(45deg);
+}
+#hamburger__toggle:checked ~ .hamburger__btn > span::before {
+  top: 0;
+  transform: rotate(0);
+}
+#hamburger__toggle:checked ~ .hamburger__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+#hamburger__toggle:checked ~ .hamburger__box {
+  visibility: visible;
+  left: 0;
+}
+
+
 .header {
   display: flex;
   justify-content: flex-start;
@@ -248,7 +344,7 @@ a.active-link {
 
 .for-you__details-item {
   width: 100%;
-  height: 65vh;
+  height: 70vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -259,6 +355,11 @@ a.active-link {
   background-image: url("../img/enterprise.png");
   background-size: cover;
   color: #FFFFFF;
+}
+
+.for-you__details-item.enterprise .for-you__link:hover {
+  color: #212121;
+  background-color: white;
 }
 
 .for-you__details-text {
@@ -287,6 +388,10 @@ a.active-link {
   background-size: cover;
 }
 
+.for-you__details-item.startups .for-you__link:hover {
+  background-color: #212121;
+  color: white;
+}
 
 
 .footer {
@@ -361,7 +466,7 @@ a:hover .open-button {
   height: 300px;
   align-items: center;
   gap: 10vh;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .clients-slider {
@@ -562,7 +667,6 @@ a:hover .open-button {
 }
 
 .review__slider {
-  height: 600px;
   text-align: center;
   position: relative;
   padding-top: 200px;
@@ -571,6 +675,8 @@ a:hover .open-button {
 .review__items {
   margin: 0 auto;
   width: 70%;
+  overflow: hidden;
+  display: flex;
 }
 
 .review-slider__arrow {
@@ -579,6 +685,7 @@ a:hover .open-button {
   padding: 5px 25px 5px 25px;
   top: 45%;
   cursor: pointer;
+  z-index: 1;
 }
 
 .review-slider__arrow-left {
@@ -590,7 +697,9 @@ a:hover .open-button {
 }
 
 .review__item {
-
+  flex: 100% 0 0;
+  align-items: center;
+  text-align: center;
 }
 
 .review__item * {
@@ -600,6 +709,10 @@ a:hover .open-button {
 
 .item__text {
   font-size: 22px;
+}
+
+.item__image {
+  width: 200px;
 }
 
 .item__person {
@@ -613,6 +726,10 @@ a:hover .open-button {
 
   .header__buttons {
     display: none;
+  }
+
+  .hamburger-menu {
+    display: block;
   }
 }
 @media screen and (max-width: 750px) {
@@ -682,11 +799,31 @@ a:hover .open-button {
     display: none;
   }
 
+  .hamburger__navigation {
+    display: block;
+  }
+
   .info__about {
     width: 100%;
   }
-}
 
+  .review__item .item__text {
+    font-size: 14px;
+  }
+
+  .review-slider__arrow {
+    top: 95%;
+  }
+
+  .review-slider__arrow-left {
+    left: 20%;
+  }
+
+  .review-slider__arrow-right {
+    right: 20%;
+  }
+
+}
 
 @media (max-width: 1350px) {
   .for-you__details-container {

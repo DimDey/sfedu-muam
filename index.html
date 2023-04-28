@@ -6,8 +6,6 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slider@9/slider-bundle.min.css"/>
-  <script src="https://cdn.jsdelivr.net/npm/slider@9/slider-bundle.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 </head>
 <body>
@@ -205,8 +203,25 @@
       </a>
     </div>
   </div>
+  <div class="hamburger-menu">
+    <input id="hamburger__toggle" type="checkbox">
+    <label for="hamburger__toggle" class="hamburger__btn">
+      <span></span>
+    </label>
+    <ul class="hamburger__box">
+      <li><a class="hamburger__item" href="#">Open an account</a></li>
+      <li><a class="hamburger__item" href="#">Sign in</a></li>
+      <li><a class="hamburger__item" href="#">Contact sales</a></li>
+      <div class="hamburger__navigation">
+        <li><a href="#" class="hamburger__item">Solutions</a></li>
+        <li><a href="#" class="hamburger__item">Products</a></li>
+        <li><a href="#" class="hamburger__item">Why Brex?</a></li>
+        <li><a href="#" class="hamburger__item">Empower</a></li>
+        <li><a href="#" class="hamburger__item">Resources</a></li>
+      </div>
+    </ul>
+  </div>
 </header>
-
 <div class="info">
   <div class="info__about">
     <div class="info__text-block">
@@ -265,7 +280,6 @@
     <span></span>
   </div>
 </div>
-
 <div class="slider-container">
   <div class="slider-wrapper">
     <div class="slider-slide">
@@ -381,15 +395,8 @@
     </div>
   </div>
 </div>
-
 <div class="review">
   <div class="review__slider">
-    <div class="review-slider__arrow review-slider__arrow-left">
-      <-
-    </div>
-    <div class="review-slider__arrow review-slider__arrow-right">
-      ->
-    </div>
     <div class="review__items">
       <div class="review__item">
         <img class="item__image" src="img/clients/doordash.png" alt="Doordash">
@@ -400,10 +407,27 @@
           — Mike Kim, VP of Finance, DoorDash
         </h5>
       </div>
+      <div class="review__item">
+        <img class="item__image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/SpaceX-Logo-Xonly.svg/2560px-SpaceX-Logo-Xonly.svg.png" alt="SpaceX">
+        <p class="item__text">
+          "Something another text"
+          "Something another text"
+          "Something another text"
+          "Something another text"
+        </p>
+        <h5 class="item__person">
+          — Ilon Musk, SpaceX
+        </h5>
+      </div>
+    </div>
+    <div class="review-slider__arrow review-slider__arrow-left">
+      <-
+    </div>
+    <div class="review-slider__arrow review-slider__arrow-right">
+      ->
     </div>
   </div>
 </div>
-
 <div class="usecase">
   <div class="usecase__header">
     <h3>How our customers use Brex to power their companies.</h3>
@@ -460,7 +484,6 @@
     </div>
   </div>
 </div>
-
 <div class="calltoaction">
   <div class="calltoaction__content">
     <h4>See what Brex can do for you.</h4>
@@ -482,7 +505,6 @@
     <img src="img/calltoaction.png" alt="">
   </div>
 </div>
-
 <footer class="footer">
   <div class="footer__map">
     <div class="footer__map-column logo">
@@ -627,7 +649,6 @@
     </p>
   </div>
 </footer>
-
 <script src="js/main.js"></script>
 </body>
 </html>
