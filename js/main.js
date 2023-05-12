@@ -9,12 +9,12 @@ function updateTransform() {
   let displayArea = elements[0].clientWidth;
   let pixels = -displayArea * activeNum;
   elements.forEach( x => x.style.transform = 'translateX('+ pixels + 'px)');
-  console.log(activeNum)
 }
 leftArrow.addEventListener('click', (e) => {
   activeNum = Math.max(activeNum - 1, 0);
   updateTransform()
 });
+
 rightArrow.addEventListener('click', (e) => {
   activeNum = Math.min(activeNum + 1, elements.length - 1);
   updateTransform()
