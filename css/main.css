@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+.overflow_hid {
+  overflow: hidden;
+}
+
 html {
   color: #212121;
   font-size: 16px;

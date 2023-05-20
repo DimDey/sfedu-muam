@@ -4,6 +4,11 @@ let activeNum = 0;
 const elements = document.querySelectorAll('.review__item');
 const leftArrow = document.querySelector('.review-slider__arrow-left')
 const rightArrow = document.querySelector('.review-slider__arrow-right')
+const checkbox = document.getElementById('hamburger__toggle')
+
+checkbox.addEventListener('change', (event) => {
+  document.body.classList.toggle("overflow_hid")
+})
 
 function updateTransform() {
   let displayArea = elements[0].clientWidth;
@@ -11,14 +16,23 @@ function updateTransform() {
   elements.forEach( x => x.style.transform = 'translateX('+ pixels + 'px)');
 }
 leftArrow.addEventListener('click', (e) => {
-  activeNum = Math.max(activeNum - 1, 0);
-  updateTransform()
+  changeActive(activeNum - 1)
 });
 
 rightArrow.addEventListener('click', (e) => {
-  activeNum = Math.min(activeNum + 1, elements.length - 1);
-  updateTransform()
+  changeActive(activeNum + 1)
 });
+
+function changeActive(newActive) {
+  if (newActive < 0)
+    newActive = elements.length - 1;
+
+  if(newActive > (elements.length - 1))
+    newActive = 0
+
+  activeNum = newActive
+  updateTransform()
+}
 
 window.addEventListener('resize', (e) => {
   updateTransform()
